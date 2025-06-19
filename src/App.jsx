@@ -13,6 +13,9 @@ function App() {
   const filteredTasks = tasks.filter((task) =>
     task.text.toLowerCase().includes(search.toLocaleLowerCase())
   );
+  const deleteTask = (id) => {
+    setTasks(tasks.filter((task) => task.id !== id));
+  }
 
   return (
     <main className="min-h-screen bg-white p-6 flex flex-col items-center">
@@ -21,14 +24,11 @@ function App() {
           TODO LIST
         </h1>
         <SearchBar value={search} onChange={setSearch} />
-        <TaskList tasks={filteredTasks} />
+        <TaskList tasks={filteredTasks} onDelete={deleteTask} />
       </div>
       <FloatingButton onClick={() => setShowModal(true)} />
       {showModal && (
-        <InputModal
-          onClose={() => setShowModal(false)}
-          onAdd={addTask}
-        />
+        <InputModal onClose={() => setShowModal(false)} onAdd={addTask} />
       )}
     </main>
   );

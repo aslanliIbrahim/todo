@@ -6,7 +6,7 @@ export default function SearchBar({ value, onChange }) {
       <input
         type="text"
         placeholder="search note..."
-        className="w-full border border-primaryF px-e py-2 rounded shadow-sm"
+        className="w-full border border-primary focus:outline-none focus:ring-2 focus:ring-primary px-2 py-2 rounded shadow-sm"
         value={value}
         onChange={(e) => onChange(e.target.value)}
       />
