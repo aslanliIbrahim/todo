@@ -1,14 +1,16 @@
 import React from "react";
-
+import noTask from "../assets/no-task.png";
 export default function TaskList({ tasks, onToggle, onDelete }) {
   return (
     <ul>
-      {tasks.length === 0 && <li>no notes found</li>}
+      {tasks.length === 0 && <li className="flex items-center justify-center">
+        <img className="object-cover" src={noTask} alt="no-task" />
+        </li>}
 
       {tasks.map((task) => (
         <li
           key={task.id}
-          className="flex items-center justify-between bg-white border border-primary rounded px-4 py-3  shadow-sm"
+          className="flex items-center justify-between bg-white border-b border-primary  px-4 py-3"
         >
           <div className="flex items-center gap-3">
             <input

@@ -20,7 +20,7 @@ export default function InputModal({ onClose, onAdd }) {
                     value={note}
                     onChange={(e) => setNote(e.target.value)}
                 />
-                <div>
+                <div className='flex justify-between gap-2'>
                     <button
                         onClick={onClose}
                         className="border border-primary text-secondary px-4 py-1 rounded"
